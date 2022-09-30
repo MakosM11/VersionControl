@@ -21,6 +21,7 @@ namespace UserMaintenance
             lblLastName.Text = Resource1.LastName; // label1
             lblFirstName.Text = Resource1.FirstName; // label2
             btnAdd.Text = Resource1.Add; // button1
+            btnWrite.Text = Resource1.Write; // button2
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
