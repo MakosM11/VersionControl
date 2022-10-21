@@ -17,28 +17,31 @@ namespace projectweek05
     public partial class Form1 : Form
     {
         BindingList<Entities.RateData> Rates = new BindingList<Entities.RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         
         
         public Form1()
         {
             InitializeComponent();
-            GetExchangeRates();
+            
             dataGridView1.DataSource = Rates;
-            xml_task();
+            comboBox1.DataSource = Currencies;
+            RefreshData();
             
 
         }
 
-        public void xml_task()
+        private void RefreshData()
         {
-            
-
-
+            Rates.Clear();
+            GetExchangeRates();
         }
+
+
 
         public void GetExchangeRates()
         {
-
+            
             //WebSzolg
 
             var mnbService = new MNBArfolyamServiceSoapClient();
@@ -99,6 +102,16 @@ namespace projectweek05
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
