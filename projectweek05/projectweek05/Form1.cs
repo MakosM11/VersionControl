@@ -8,19 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using projectweek05.MnbServiceReference;
-using projectweek05.Properties;
+using projectweek05.Entities;
 
 
 namespace projectweek05
 {
     public partial class Form1 : Form
     {
+        BindingList<Entities.RateData> Rates = new BindingList<Entities.RateData>();
         
         
         public Form1()
         {
             InitializeComponent();
             GetExchangeRates();
+            dataGridView1.DataSource = Rates;
+            
 
         }
 
