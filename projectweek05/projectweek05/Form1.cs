@@ -7,14 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using projectweek05.MnbServiceReference;
+using projectweek05.Properties;
+
 
 namespace projectweek05
 {
     public partial class Form1 : Form
     {
+        
+        
         public Form1()
         {
             InitializeComponent();
+            GetExchangeRates();
+
+        }
+
+        private void GetExchangeRates()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+
+            var request = new GetExchangeRatesRequestBody()
+            {
+                currencyNames = "EUR",
+                startDate = "2020-01-01",
+                endDate = "2020-06-30"
+            };
+
+            var response = mnbService.GetExchangeRates(request);
+
+            var result = response.GetExchangeRatesResult;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
