@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week06_futoszalag.Abstractions;
 
 namespace Week06_futoszalag.Entities
 {
-    public class BallFactory
+    public class BallFactory : Abstractions.IToyFactory
     {
-        public Ball CreateNew()
+        public Abstractions.Toy CreateNew()
         {
             return new Ball();
         }

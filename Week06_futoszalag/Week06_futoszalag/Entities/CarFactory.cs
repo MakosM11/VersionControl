@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Week06_futoszalag.Abstractions;
 
 namespace Week06_futoszalag.Entities
 {
-    public class Ball : Abstractions.Toy
+    public class CarFactory : Abstractions.IToyFactory
     {
-
-
-        protected override void DrawImage(Graphics g)
+        public Abstractions.Toy CreateNew()
         {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+            return new Car();
         }
-
-  
     }
 }
