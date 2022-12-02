@@ -39,7 +39,7 @@ namespace week09_i0qbuw
             {
                 for (int i = 0; i < Population.Count; i++)
                 {
-                    SimStep(year, Population[i]);
+                    SimStep(numericUpDown1.TabIndex, Population[i]);
                 }
 
                 int nbrOfMales = (from x in Population
