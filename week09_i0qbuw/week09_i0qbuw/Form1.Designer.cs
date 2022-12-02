@@ -1,5 +1,5 @@
 ﻿
-namespace week09
+namespace week09_i0qbuw
 {
     partial class Form1
     {
